@@ -1,60 +1,46 @@
-# 🖥️ QA & Algorithms: Custom Implementation of Array.prototype.sort()
+# 🧪 QA Portfolio: Array Sorting Algorithm Validation
 
-> ### A low-level algorithmic project focusing on custom sorting implementation, comparator function contracts, and performance predictability.
+> **About this repository:** This project focuses on the foundation of the Agile Testing Pyramid: **Unit Testing**. It demonstrates how to validate core JavaScript algorithms and array manipulation methods using automated unit tests, static analysis, and continuous integration.
 
-This repository demonstrates the ability to implement fundamental data structures and native JavaScript methods from scratch without relying on built-in language abstractions[cite: 4]. 
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Unit Testing](https://img.shields.io/badge/-Unit_Testing-C21325?style=for-the-badge&logo=jest&logoColor=white)
+![ESLint](https://img.shields.io/badge/-Static_Analysis-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/-CI/CD-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
-From a Software Engineering and Quality Assurance perspective, this project showcases deep understanding of algorithmic sorting behavior, edge-case handling, and strict adherence to functional contracts (such as comparator function return values).
+## 🎯 Project Overview
 
----
+This repository contains a custom JavaScript implementation for sorting arrays (`src/arrayMethodSort.js`). 
 
-## 🌐 Live Demo & QA Reports
+As a **QA Automation Engineer**, my goal here is to ensure the algorithmic logic is flawless by writing and maintaining comprehensive unit tests (`src/arrayMethodSort.test.js`) that cover standard use cases, boundary values, and potential edge cases directly at the code level.
 
-- **[Live Application Demo](#)** *(Replace with your GitHub Pages demo link if applicable)*
-- **[Automated Test HTML Report](#)** *(Replace with your test report link)*
+## 🛠️ QA Tech Stack & Tools
 
----
+* **Testing Level:** Unit Testing (White-Box Testing)
+* **CI/CD Pipeline:** GitHub Actions (Automated testing on every push/PR)
+* **Static Code Analysis (Shift-Left QA):** ESLint
+* **Core Language:** JavaScript (ES6+)
 
-## 🧪 QA Focus: Algorithmic Robustness & Edge Cases
+## 📊 Test Strategy & Coverage
 
-Low-level algorithms must handle diverse data types and unexpected inputs without failing. This custom implementation was built keeping strict testing criteria in mind:
+The testing strategy is designed to isolate and tightly validate the sorting function:
 
-### 1. Comparator Function Contract Compliance
-Native JavaScript sorting converts elements to strings by default if no comparator is provided, leading to unexpected numeric sorting bugs (e.g., `[10, 2).sort()` returning `[10, 2]`). 
-- **QA Advantage:** The custom sort implementation strictly enforces expected sorting contracts, ensuring numbers and strings are handled predictably based on explicit or default comparison rules.
+### 1. Unit Testing (Code Level Validation)
+Located in `src/arrayMethodSort.test.js`, the automated test suite verifies:
+* Correct sorting behavior for arrays containing numerical values (ascending/descending logic).
+* Correct sorting behavior for string values (alphabetical order).
+* Robust handling of edge cases (e.g., empty arrays, single-element arrays, undefined values).
+* Mutation prevention (ensuring predictable behavior of the array elements).
 
-### 2. Immutability vs. In-Place Mutation
-While native `Array.prototype.sort()` mutates the original array in place, understanding its side effects is crucial for test isolation. 
-- **QA Safeguard:** Unit tests for this task verify that the custom sorting logic correctly handles array indexing, swaps, and boundary constraints without introducing memory leaks or infinite loops.
+### 2. Continuous Integration (CI/CD)
+The project is seamlessly integrated with GitHub Actions (`.github/workflows/test.yml`). Every commit automatically triggers a pipeline that:
+* Runs `ESLint` to catch syntax, logic, and style errors early.
+* Executes the full unit test suite to prevent regressions from being merged into the main branch.
 
-### 3. Comprehensive Unit Testing
-Writing custom sorting algorithms requires validating multiple edge cases:
-- Empty arrays and single-element arrays.
-- Already sorted vs. reverse-sorted arrays.
-- Arrays containing duplicate elements or negative numbers.
+## 🚀 How to Run the Tests Locally
 
----
+To evaluate the unit tests and static analysis tools on your local machine, follow these steps:
 
-## 🎯 Technical Specifications (System Under Test)
-
-The custom sorting algorithm addresses the following core requirements:
-
-- **Algorithm Mechanics:** Implements a stable or efficient sorting approach (such as bubble sort, insertion sort, or quicksort logic) tailored to meet the test suite's performance expectations.
-- **Comparator Handling:** Accepts an optional comparator function taking two arguments `(a, b)` and respects negative, zero, and positive return values to determine element ordering.
-- **Type Safety & Coercion:** Safely handles element type evaluation to ensure consistent comparison outcomes.
-
----
-
-## 🧰 Tech Stack & Concepts
-
-- **Language:** JavaScript (ES6+)
-- **Core Concepts:** Algorithms & Data Structures, Comparator Functions, Time & Space Complexity
-- **Testing Approach:** Low-level Unit Testing, Edge-case validation
-
----
-
-## ⚙️ Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/webdevnikfull/js_array-method-sort.git](https://github.com/webdevnikfull/js_array-method-sort.git)
+### 1. Environment Setup
+Clone the repository and install the required Node.js dependencies:
+```bash
+npm install
